@@ -1,14 +1,29 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { from, Observable, of } from 'rxjs';
+
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  private user: Observable<any>;
 
-  login(email, password) {
-    return of(null)
+  constructor(private afAuth: AngularFireAuth) {
+    this.user = afAuth.authState;
+  }
+
+  logIn(email, password) {
+    return from(this.afAuth.signInWithEmailAndPassword(email, password));
+  }
+
+  signOut() {
+    return from(this.afAuth.signOut());
+  }
+
+  getAuthUser(): Observable<any> {
+    return this.user;
   }
 }

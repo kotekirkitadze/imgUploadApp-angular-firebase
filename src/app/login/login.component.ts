@@ -17,7 +17,7 @@ export class LoginComponent {
   }
 
   signIn() {
-    this.authService.login(this.email, this.password)
+    this.authService.logIn(this.email, this.password)
       .subscribe(
         () => this.router.navigate(['gallery']),
         (err) => this.errorMsg = err
