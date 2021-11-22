@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Upload } from '../models/upload.model';
+import { UploadService } from '../services/upload.service';
 
 @Component({
   selector: 'app-upload',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadComponent implements OnInit {
 
-  constructor() { }
+  files: FileList;
+  upload: Upload;
+
+  constructor(private uploadService: UploadService) { }
 
   ngOnInit(): void {
   }
