@@ -1,1 +1,5 @@
-<p>upload works!</p>
+<div class="container">
+  <h2 class="heading">Upload New Images</h2>
+  <input type="file" (change)="handleFiles($event)" multiple>
+  <button class="btn btn-primary" (click)="uploadFiles()">Upload Images</button>
+</div>
