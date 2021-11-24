@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  title: string;
+  title: string = 'Gallery';
   user: Observable<{ uid }>
   constructor(
     private authService: AuthService,

@@ -25,4 +25,8 @@ export class ImageService {
   getImages(): Observable<GalleryImage[]> {
     return this.db.collection<GalleryImage>('uploads').valueChanges()
   }
+
+  getImage(key: string) {
+    return of(null)
+  }
 }

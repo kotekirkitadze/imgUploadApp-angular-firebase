@@ -21,3 +21,15 @@ li{
 h2{
   margin-bottom: 20px;
 }
+
+img{
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+img:hover{
+  transform: scale(1.1);
+}
+
+
