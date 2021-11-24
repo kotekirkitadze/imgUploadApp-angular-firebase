@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { GalleryImage } from '../models/galleryImage.model';
+import { map } from 'rxjs/operators';
 
 
 @Injectable({
@@ -27,6 +28,8 @@ export class ImageService {
   }
 
   getImage(key: string) {
-    return of(null)
+    return this.db.collection<GalleryImage>('uploads').valueChanges().pipe(
+      map(d => d.find(e => e.$key == key))
+    )
   }
 }

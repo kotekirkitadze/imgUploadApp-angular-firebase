@@ -8,7 +8,7 @@ import { ImageService } from '../services/image.service';
   styleUrls: ['./image-detail.component.scss']
 })
 export class ImageDetailComponent implements OnInit {
-  private imgUrl = '';
+  imgUrl = '';
 
 
   constructor(
@@ -18,11 +18,16 @@ export class ImageDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.getImageUrl(this.route.snapshot.params['id'])
+    console.log(this.route.snapshot.params['id'])
   }
 
   getImageUrl(key: string) {
     this.imageService.getImage(key).subscribe(
-      imageUrl => this.getImageUrl = imageUrl
+      data => {
+        this.imgUrl = data.url;
+        console.log(data.url)
+      }
+
     )
   }
 

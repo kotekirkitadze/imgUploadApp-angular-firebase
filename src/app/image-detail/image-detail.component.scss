@@ -1,0 +1,22 @@
+
+img{
+  box-shadow: #555 1px 2px 8px 1px;
+  position: relative;
+  min-height: 660px;
+  min-width: 900px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+ .img-container{
+  margin: 24px;
+  box-shadow: #555 1px 2px 8px 1px;
+  // min-height: 660px;
+  // min-width: 100%;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // align-content: center;
+  position: absolute;
+}
